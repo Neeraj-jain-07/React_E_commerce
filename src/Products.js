@@ -1,8 +1,30 @@
 import React from "react";
 import styled from "styled-components";
+import FilterSection from "./components/FilterSection";
+import ProductList from "./components/ProductList";
+import Sort from "./components/Sort";
+
 
 const Products = () => {
-  return <Wrapper></Wrapper>;
+  
+  return <Wrapper>
+    <div className="container grid grid-filter-column">
+        <div>
+          {/* filtersection */}
+          <FilterSection />
+        </div>
+        <section className="product-view--sort">
+           <div className="sort-filter">
+            {/* sort */}
+            <Sort/>
+           </div>
+           <div className="main-product">
+            {/* productList */}
+            <ProductList />
+           </div>
+        </section>
+    </div>
+  </Wrapper>;
 };
 
 const Wrapper = styled.section`

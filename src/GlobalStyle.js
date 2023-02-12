@@ -62,7 +62,7 @@ h1 {
   }
 
 h3 {
-  font-size: 1.8rem;
+  font-size: 3rem;
   font-weight: 400;
 }
 
@@ -139,8 +139,8 @@ ${"" /* resuable code section  */}
 input, textarea{
     max-width: 50rem;
     color: ${({ theme }) => theme.colors.black};
-    padding: 1.6rem 2.4rem;
-    border: 1px solid ${({ theme }) => theme.colors.border};
+    padding: 0.6rem 2rem;
+    border: 0.2px solid rgba(0, 0, 0, 0.6);
     text-transform: uppercase;
    box-shadow: ${({ theme }) => theme.colors.shadowSupport};
 }
