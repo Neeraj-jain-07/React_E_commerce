@@ -13,8 +13,8 @@ const MyImages = (props) => {
         {props.images && 
       <div className="productImageBox">
         <div className="fisrtBox">
-            {props.images.map(element => {
-                return <div className="imgF" key={element.id}>
+            {props.images.map((element,id) => {
+                return <div className="imgF" key={id}>
                     <img src={element.url} alt={element.filename}  onClick={() => setmainImg(element)}/>
                 </div>
             })}

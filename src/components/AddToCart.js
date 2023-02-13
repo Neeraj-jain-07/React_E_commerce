@@ -4,11 +4,13 @@ import {GiCheckMark} from 'react-icons/gi'  // right mark
 import AddToItem from './AddToItem'
 import {Button} from '../styles/Button'
 import { Link } from 'react-router-dom'
+import { useCartContext } from '../context/cartContext'
 
 const AddToCart = ({product}) => {
   const [color ,setColor ] = useState(product.colors[0]);
   const [amount ,setAmount  ] = useState(1);
-  const {stock} = product;
+  const {id,colors,stock} = product;
+  const {addToCart} = useCartContext();
   const amountDecrease = () => {
     amount > 1 ? setAmount(amount - 1): setAmount(1);
   }
@@ -36,8 +38,9 @@ const AddToCart = ({product}) => {
             <AddToItem amount={amount} amountDecrease={amountDecrease} amountIncrease={amountIncrease}/>
            </div>
           
-           
-           <Button> <Link to="/cart">ADD TO CART </Link></Button>
+           <Link to='/cart'>
+           <Button onClick={() => {addToCart(id ,color,amount,product)}}> ADD TO CART </Button>
+           </Link>
        </div>
     </Wrapper>
   )
@@ -74,6 +77,13 @@ const Wrapper = styled.div`
        align-items: center;
        
    }
+// AddToItem.js li style
+   .setItemAdd{
+    display:flex;
+    gap:20px;
+    align-items: center;
+    padding: 20px 4px;
+  }
 `
 
 export default AddToCart;

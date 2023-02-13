@@ -14,12 +14,7 @@ const AddToItem = ({amount , amountDecrease , amountIncrease}) => {
 }
 
 const Wrapper = styled.div`
-  .setItemAdd{
-    display:flex;
-    gap:20px;
-    align-items: center;
-    padding: 20px 4px;
-  }
+ 
 
   p{
     color:black;

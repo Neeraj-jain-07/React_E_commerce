@@ -3,8 +3,7 @@ import {BsGridFill,BsList} from 'react-icons/bs'
 import { useFilterContext } from '../context/FilterContext'
 
 const Sort = () => {
-  const {grid_view,setListView,setGridView , filter_product} = useFilterContext();
-  console.log(grid_view)
+  const {grid_view,setListView,setGridView , filter_product , sorting} = useFilterContext();
   return (
     <Wrapper>
       <div className="box">
@@ -18,7 +17,26 @@ const Sort = () => {
 
          {/*  selectbox  */}
          <div className="selectbox">
-          <p>selectbox</p>
+          <form action="#">
+            <label htmlFor="sort"></label>
+            <select name="sort" id="sort" 
+              onClick={sorting}>
+
+
+              <option value="#">Sort by - featured</option>
+              <option value="lowest">Price (lowest)</option>
+              {/* <option value="#" disabled></option> */}
+
+              <option value="highest">Price (highest)</option>
+              {/* <option value="#" disabled></option> */}
+
+              <option value="a-z">Price (a-z)</option>
+              {/* <option value="#" disabled></option> */}
+
+              <option value="z-a">Price (z-a)</option>
+              {/* <option value="#" disabled></option> */}
+            </select>
+          </form>
          </div>
       </div>
      
@@ -50,6 +68,9 @@ const Wrapper = styled.div`
     text-align: center;
     border: none;
   }
+  select,option{
+    cursor:pointer;
+  }
 
   button:hover{
    color:white;
@@ -60,6 +81,10 @@ const Wrapper = styled.div`
     p{
       font-size:19px;
     }
+  }
+
+  #sort{
+    padding: 5px 18px;
   }
 `
 

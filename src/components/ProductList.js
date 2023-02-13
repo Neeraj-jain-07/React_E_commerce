@@ -11,7 +11,7 @@ const ProductList = () => {
       <Wrapper>
          <div className="showAllProducts ">
             {  filter_product.map(product => {
-              return <Product product={product}/>
+              return <Product key={product.id} product={product}/>
             })}
          </div>
       </Wrapper>
@@ -36,7 +36,6 @@ const Wrapper = styled.section`
 
    .showAllProducts{
     display:flex;
-    justify-content:space-between;
     padding: 10px 5px 50px 0px;
     flex-wrap:wrap;
     gap:10px;

@@ -1,11 +1,60 @@
 import styled from "styled-components";
+import CartItem from "./components/CartItem";
+import { useCartContext } from "./context/cartContext";
 
 const Cart = () => {
-  return <Wrapper><h3>Cart</h3></Wrapper>;
+  const {cart} = useCartContext();
+  console.log(cart)
+  return <Wrapper>
+    <h3 className="t-c">Cart</h3>
+     <div className="cartProduct">
+       <div className="productBoxs-heading t-c grid g-5-cols">
+          <div className="1"><p className="t-c">ITEM</p></div>
+          <div className="2"><p>PRICE</p></div>
+          <div className="3"><p>QUANTITY</p></div>
+          <div className="4"><p>SUBTOTAL</p></div>
+          <div className="5"><p>REMOVE</p></div>
+       </div>
+       <hr />
+       <div className="cart-item t-c">
+        {
+          cart.map((curElem) => {
+            return <CartItem key={curElem.id} {...curElem}/>
+          })
+        }
+       </div>
+       
+     </div>
+    </Wrapper>;
 };
 
 const Wrapper = styled.section`
-  padding: 9rem 0;
+  .t-c{
+    text-align:center;
+  }
+  padding: 5rem 0;
+  .grid{
+    display:grid;
+    gap: 0rem;
+  }
+  .g-5-cols{
+    grid-template-columns:repeat(5,1fr)
+  }
+  .productBoxs-heading{
+    p{
+      color:grey;
+    }
+  }
+
+  .cartProduct{
+    max-width: 900px;
+    margin: auto;
+    width: 85%;
+    margin-top: 40px;
+  }
+  .t-c{
+    text-align:center;
+  }
 
   .grid-four-column {
     grid-template-columns: repeat(4, 1fr);
