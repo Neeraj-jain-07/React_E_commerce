@@ -4,17 +4,23 @@ import { AiFillDelete } from 'react-icons/ai'
 import { useCartContext } from "../context/cartContext"
 import AddToItem from "./AddToItem"
 
+import { Toaster } from 'react-hot-toast';
+
 
 const CartItem = ({ id, name, image, color, price, amount }) => {
-    const { deleteItem } = useCartContext()
-    const amountDecrease = () => {
-        // amount > 1 ? setAmount(amount - 1): setAmount(1);
-    }
-    const amountIncrease = () => {
-        // amount < stock ?  setAmount(amount + 1): setAmount(stock);
-    }
+    const { deleteItem,amountDecrease,amountIncrease } = useCartContext()
+    // const amountDecrease = () => {
+    //     // amount > 1 ? setAmount(amount - 1): setAmount(1);
+    //     console.log("id of item is : ",id)
+    // }
+
+    // const amountIncrease = () => {
+    //     // amount < stock ?  setAmount(amount + 1): setAmount(stock);
+    //     console.log("id of item is : ",id)
+    // }
     return (
         <Wrapper>
+            <Toaster />
             <div className="grid g-5-cols">
                 <div className="img d-f">
                     <figure >
@@ -34,7 +40,7 @@ const CartItem = ({ id, name, image, color, price, amount }) => {
 
 
                     <div className="InDecBtn">
-                        <AddToItem amount={amount} amountDecrease={amountDecrease} amountIncrease={amountIncrease} />
+                        <AddToItem amount={amount} amountDecrease={()=>amountDecrease(id)} amountIncrease={() =>amountIncrease(id)} />
                     </div>
 
                 </div>

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useCartContext } from "../context/cartContext";
+import { useAuth0 } from "@auth0/auth0-react";
+
 
 const Nav = styled.nav`
   .header {
@@ -94,6 +97,11 @@ const Nav = styled.nav`
 `;
 
 const Navbar = () => {
+   
+  const { loginWithRedirect } = useAuth0();
+  const {total_item,cart } = useCartContext();
+  console.log(cart)
+  console.log(total_item)
   const [hamberger, sethamberger] = useState(false);
 
   const navbarRenderUp = () => {
@@ -102,6 +110,11 @@ const Navbar = () => {
   const navbarRenderDown = () => {
     sethamberger(false);
   };
+
+  const login = () => {
+    loginWithRedirect();
+    navbarRenderDown();
+  }
   return (
     <Nav>
       <div className="header">
@@ -121,9 +134,12 @@ const Navbar = () => {
           <Link to="/contact" className="alink" onClick={navbarRenderDown}>
             Contact
           </Link>
+          <Link to="/login" className="alink" onClick={login}>
+            Login
+          </Link>
           <Link to="/cart" className="alink cart">
             <i className="fa-sharp fa-solid fa-cart-shopping" onClick={navbarRenderDown}></i>
-            <span className="cart-item-notification">1</span>
+            <span className="cart-item-notification">{total_item}</span>
           </Link>
         </div>
         <div className="hamberger">

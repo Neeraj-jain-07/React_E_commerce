@@ -9,7 +9,6 @@ import { Button } from '../styles/Button'
 const FilterSection = () => {
   const { searchProduct, all_product,clearFilter ,filters} = useFilterContext();
   const {color,category,price,maxprice , minprice ,text} = filters;
-  console.log(filters)
 
   const getUniqeData = (data, field) => {
     let res = data.map(product => {
@@ -199,29 +198,29 @@ input[type=range] {
 export default FilterSection
 
 
-{/* <input type="radio" id="age1" name="category" value="30" />
-<label htmlFor="age1">0 - 30</label><br />
-<input type="radio" id="age2" name="category" value="60" />
-<label htmlFor="age2">31 - 60</label><br />
-<input type="radio" id="age3" name="category" value="100" />
-<label htmlFor="age3">61 - 100</label><br /> <br /> <br /> */}
+// {/* <input type="radio" id="age1" name="category" value="30" />
+// <label htmlFor="age1">0 - 30</label><br />
+// <input type="radio" id="age2" name="category" value="60" />
+// <label htmlFor="age2">31 - 60</label><br />
+// <input type="radio" id="age3" name="category" value="100" />
+// <label htmlFor="age3">61 - 100</label><br /> <br /> <br /> */}
 
 
-{/* <form onSubmit={(e) => e.preventDefault()}>
-                <input type="radio" id="allProduct"  name="category" value="all" onChange={searchProduct}/>
-                <label htmlFor="allProduct">All</label><br />
+// {/* <form onSubmit={(e) => e.preventDefault()}>
+//                 <input type="radio" id="allProduct"  name="category" value="all" onChange={searchProduct}/>
+//                 <label htmlFor="allProduct">All</label><br />
 
-                <input type="radio" id="mobile" name="category" value="mobile" onChange={searchProduct} />
-                <label htmlFor="mobile">Mobile</label><br />
+//                 <input type="radio" id="mobile" name="category" value="mobile" onChange={searchProduct} />
+//                 <label htmlFor="mobile">Mobile</label><br />
 
-                <input type="radio" id="laptop" name="category" value="laptop" onChange={searchProduct} />
-                <label htmlFor="laptop">Laptop</label><br /> 
+//                 <input type="radio" id="laptop" name="category" value="laptop" onChange={searchProduct} />
+//                 <label htmlFor="laptop">Laptop</label><br /> 
 
-                <input type="radio" id="watch" name="category" value="watch" onChange={searchProduct} />
-                <label htmlFor="watch">Watch</label><br /> 
-                <input type="radio" id="computer" name="category" value="computer" onChange={searchProduct} />
-                <label htmlFor="computer">Computer</label><br /> 
+//                 <input type="radio" id="watch" name="category" value="watch" onChange={searchProduct} />
+//                 <label htmlFor="watch">Watch</label><br /> 
+//                 <input type="radio" id="computer" name="category" value="computer" onChange={searchProduct} />
+//                 <label htmlFor="computer">Computer</label><br /> 
 
-                <input type="radio" id="accessories" name="category" value="accessories" onChange={searchProduct} />
-                <label htmlFor="accessories">Accessories</label><br /> 
-          </form> */}
+//                 <input type="radio" id="accessories" name="category" value="accessories" onChange={searchProduct} />
+//                 <label htmlFor="accessories">Accessories</label><br /> 
+//           </form> */}

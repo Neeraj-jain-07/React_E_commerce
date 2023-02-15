@@ -1,12 +1,21 @@
 import styled from "styled-components";
 import CartItem from "./components/CartItem";
 import { useCartContext } from "./context/cartContext";
+import { Button } from "./styles/Button";
+import { Link } from "react-router-dom";
+import PriceFormate from "./Helpers/PriceFormate";
 
 const Cart = () => {
-  const {cart} = useCartContext();
-  console.log(cart)
+  const {cart,clearCart,total_price,shipping_fee} = useCartContext();
+  // console.log(cart)
+
+  if(cart.length ===0) {
+    console.log("ok")
+  return <h3 style={{textAlign:"center" ,padding:"80px" ,minHeight:'70vh'}}>No item added ....</h3>
+   }
+
   return <Wrapper>
-    <h3 className="t-c">Cart</h3>
+    <h3 className="t-c " >Cart</h3>
      <div className="cartProduct">
        <div className="productBoxs-heading t-c grid g-5-cols">
           <div className="1"><p className="t-c">ITEM</p></div>
@@ -23,12 +32,77 @@ const Cart = () => {
           })
         }
        </div>
-       
+       <hr />
+       <div className="btnBox">
+       <Link to="/products"><Button>Go to shopping</Button></Link> 
+        <Button onClick={clearCart} className='clear'>Clear Cart</Button>
+       </div>
+
+      <div className="wrapPriceSummary d-f">
+              <div className="priceSummary d-f">
+                  <div className="subtotal d-f fd-row">
+                    <p>Subtotal: </p>
+                    <h3> <PriceFormate price={total_price}/> </h3>
+                  </div>
+
+                  <div className="shipping_fee d-f fd-row">
+                    <p>Shipping Fee: </p>
+                    <h3> <PriceFormate price={shipping_fee}/> </h3>
+                  </div>
+                  <hr />
+                  <div className="Order_total d-f fd-row">
+                    <p>Order Total: </p>
+                    <h3> <PriceFormate price={total_price + shipping_fee}/> </h3>
+                  </div>
+              </div>
+       </div>
      </div>
     </Wrapper>;
 };
 
 const Wrapper = styled.section`
+
+   .wrapPriceSummary{
+      justify-content:end;
+      margin:20px;
+      margin-top:50px;
+   }
+  .priceSummary{
+    width: 300px;
+    gap: 10px;
+    padding: 20px;
+    flex-direction:column;
+    background: #ebebeb57;
+    border-radius: 5px;
+  }
+  .d-f{
+    display: flex;
+  }
+
+  .fd-row{
+    flex-direction:row;
+    justify-content: space-between;
+    p{
+      color:grey;
+    }
+    h3{
+      font-size:19px;
+    }
+  }
+.btnBox{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  .clear{
+    background: red;
+  }
+  .clear:hover{
+   opacity:0.6;
+  }
+}
+
+
+   min-height:75vh;
   .t-c{
     text-align:center;
   }

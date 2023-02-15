@@ -5,21 +5,30 @@ import AddToItem from './AddToItem'
 import {Button} from '../styles/Button'
 import { Link } from 'react-router-dom'
 import { useCartContext } from '../context/cartContext'
+import  toast, { Toaster } from 'react-hot-toast';
 
 const AddToCart = ({product}) => {
   const [color ,setColor ] = useState(product.colors[0]);
   const [amount ,setAmount  ] = useState(1);
-  const {id,colors,stock} = product;
+  const {id,stock} = product;
   const {addToCart} = useCartContext();
+ 
+  const checkAndIncreaseAmount = () => {
+    toast.success('Product is out of stock , try again later')
+    setAmount(stock)
+  }
+
   const amountDecrease = () => {
     amount > 1 ? setAmount(amount - 1): setAmount(1);
   }
   const amountIncrease = () => {
-    amount < stock ?  setAmount(amount + 1): setAmount(stock);
+    amount < stock ? setAmount(amount + 1) : checkAndIncreaseAmount();
   }
+
 
   return (
     <Wrapper>
+      <Toaster/>
        <div className="cBox">
          <p className='btnBox'>Color :
               {product.colors.map((currColor ,index) => {

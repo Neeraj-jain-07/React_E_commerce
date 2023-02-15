@@ -12,6 +12,7 @@ import MyIamges from './components/MyImages'
 import AddToCart from "./components/AddToCart";
 
 
+
 const API = 'https://api.pujakaitem.com/api/products';
 
 const SingleProduct = () => {
@@ -57,6 +58,7 @@ const SingleProduct = () => {
 
 
   return <Wrapper>
+    
     <PageNavigation name={name} />
     <div className="container">
       <div className="productSection">
@@ -66,7 +68,7 @@ const SingleProduct = () => {
         <div className="descriptionSection">
           <h3>{name}</h3>
           <p > <span dangerouslySetInnerHTML={{ __html: starsReal }}></span> ({stars})</p>
-
+          
           <p>{reviews} reviews</p>
           <p> <span>MRP : <del> <PriceFormate price={price + 250000} /> </del> </span> </p>
           <p className="dod">Deal of the Day : <PriceFormate price={price} /></p>
