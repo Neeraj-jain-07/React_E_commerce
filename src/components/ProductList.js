@@ -122,6 +122,18 @@ const Wrapper = styled.section`
     flex-direction:column;
     padding: 0px 15px 80px 0px;
   }
+
+  @media (max-width:780px){
+    .box{
+      width:49%;
+    }
+  }
+  @media (max-width:580px){
+    .box{
+      width:80%;
+      margin:auto;
+    }
+  }
 `
 
 export default ProductList

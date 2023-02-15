@@ -23,17 +23,17 @@ const Sort = () => {
               onClick={sorting}>
 
 
-              <option value="#">Sort by - featured</option>
-              <option value="lowest">Price (lowest)</option>
+              <option id='sort' value="#">Sort by - featured</option>
+              <option   value="lowest">Price (lowest)</option>
               {/* <option value="#" disabled></option> */}
 
-              <option value="highest">Price (highest)</option>
+              <option  value="highest">Price (highest)</option>
               {/* <option value="#" disabled></option> */}
 
-              <option value="a-z">Price (a-z)</option>
+              <option  value="a-z">Price (a-z)</option>
               {/* <option value="#" disabled></option> */}
 
-              <option value="z-a">Price (z-a)</option>
+              <option  value="z-a">Price (z-a)</option>
               {/* <option value="#" disabled></option> */}
             </select>
           </form>
@@ -50,7 +50,8 @@ const Wrapper = styled.div`
     padding:4rem 20px;
     display:flex;
     justify-content:space-between;
-
+      flex-wrap: wrap;
+      gap:10px;
     .icon{
       display:flex;
       gap:10px;
@@ -63,7 +64,7 @@ const Wrapper = styled.div`
   }
 
   button{
-    padding: 4px 7px;
+    padding: 3px 7px 0px;
     cursor: pointer;
     text-align: center;
     border: none;
@@ -78,6 +79,8 @@ const Wrapper = styled.div`
   }
 
   .prodoct-count{
+    display: flex;
+    align-items: center;
     p{
       font-size:19px;
     }
@@ -85,6 +88,41 @@ const Wrapper = styled.div`
 
   #sort{
     padding: 5px 18px;
+  }
+  @media (max-width:500px){
+      
+    .box{
+      padding: 2rem 10px;
+    }
+    button,p{
+     
+        font-size: 1rem;
+        line-height: 1;
+     
+     
+    }
+    .prodoct-count p {
+      font-size: 16px;
+    }
+    
+   
+  }
+  @media (max-width:450px){
+    button{
+      padding: 3px 7px 2px;
+    }
+  }
+  @media (max-width:415px){
+     .selectbox{
+      margin-left: 87px;
+      margin-top: 15px;
+     }
+  }
+  @media (max-width:380px){
+     .selectbox{
+      margin-left: 30px;
+      margin-top: 15px;
+     }
   }
 `
 

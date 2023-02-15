@@ -36,9 +36,17 @@ export const FilterProvider = ({ children }) => {
       };
 
     const searchProduct = (e) => {
-        // console.log("sorting appling", e.target.value)
-        // console.log("sorting appling", e.target.name)
+        console.log(e)
+        console.log("sorting appling", "e.target.value","e.target.name")
+       if(e.target.name === undefined){
+        console.log(e.target.value, e.target.className)
+        dispatch({ type: "SET_FILTERS_VALUE",payload:{name:e.target.className, value:e.target.value} });
+       }else{
+        console.log(e.target.value, e.target.name)
         dispatch({ type: "SET_FILTERS_VALUE",payload:{name:e.target.name, value:e.target.value} });
+       }
+       
+       
     }
 
     const clearFilter = () => {

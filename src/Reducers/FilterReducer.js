@@ -61,8 +61,8 @@ const filterReducer = (state, action) => {
        }
        if (action.type === "SET_FILTERS_VALUE") {
               const { name ,value} =  action.payload   
-              // console.log(value ,"When set vlaue")  
-              // console.log(name ,"Name set vlaue")  
+              // console.log(value ,"value")  
+              // console.log(name ,"name")  
               return {
                      ...state,
                     filters:{
@@ -101,16 +101,17 @@ const filterReducer = (state, action) => {
                             return product.colors.includes(color)
                      })
                 }
+
                 if(price === 0){
                      tempProduct=   tempProduct.filter(product => {
                             return product.price ===price
                      })
-                }
-                else{
+                }else{
                      tempProduct=   tempProduct.filter(product => {
                             return product.price <=price
                      })
                 }
+
               //  console.log("filtered array ",tempProduct)
                return {
                      ...state,

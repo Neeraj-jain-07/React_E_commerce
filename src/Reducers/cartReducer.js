@@ -121,7 +121,7 @@ const cartReducer = (state, action) => {
         })
         // let updataTotalPrice = state.cart.reduce((init , currProduct ) =>     init + (currProduct.price * currProduct.amount), 0)
         // let updatedItem = state.cart.reduce((init , currProduct) =>    init + currProduct.amount,0);
-        console.log(updataTotalPrice)
+        // console.log(updataTotalPrice)
         return{
             ...state,
             total_price:updataTotalPrice,

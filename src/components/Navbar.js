@@ -99,9 +99,8 @@ const Nav = styled.nav`
 const Navbar = () => {
    
   const { loginWithRedirect } = useAuth0();
-  const {total_item,cart } = useCartContext();
-  console.log(cart)
-  console.log(total_item)
+  const {total_item } = useCartContext();
+ 
   const [hamberger, sethamberger] = useState(false);
 
   const navbarRenderUp = () => {

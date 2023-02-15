@@ -54,13 +54,13 @@ const FilterSection = () => {
         {/* company data here */}
         <div className="company">
           <h3 className='t-center'>Company</h3>
-          <form action="#">
+          
             <select name='company' id='company' onClick={searchProduct}>
               {companyOnlyData.map((curEle, i) => {
-                return <option value={curEle} key={i}> {capitalizeFirstLetter(curEle)} </option> // option tag is not of dom it's provided by operating system
+                return <option className='company' value={curEle} key={i}> {capitalizeFirstLetter(curEle)} </option> // option tag is not of dom it's provided by operating system
               })}
             </select>
-          </form>
+        
         </div>
 
         {/* color data here */}
@@ -100,6 +100,10 @@ input[type=range] {
   // -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
   background: transparent; /* Otherwise white in Chrome */
 }
+
+   .searchProduct{
+    text-align: center;
+   }
    .filterBox{
       padding:20px 10px;
    }
@@ -163,11 +167,22 @@ input[type=range] {
       margin-right: 6px;
       cursor:pointer;
     }
+    .company{
+      form{
+        text-align: center;
+        select{
+          max-width:300px;
+        }
+      }
+    }
+
+    .rangePrice{
+      text-align: center;
+    }
 
     .colorsfield{
       display: flex;
     align-items: center;
-    padding-left: 20px;
     margin-top: 19px;
     }
     .mark{
@@ -192,6 +207,18 @@ input[type=range] {
       }
 
     }
+
+    @media (max-width:787px){
+      .colorsfield{
+        display: flex;
+        justify-content: center;
+      }
+      .box{
+        padding: 3rem 20px;
+      }
+     
+    }
+    
     
 `
 

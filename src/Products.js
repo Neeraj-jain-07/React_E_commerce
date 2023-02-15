@@ -30,11 +30,18 @@ const Products = () => {
 const Wrapper = styled.section`
   .grid-filter-column {
     grid-template-columns: 0.2fr 1fr;
+    gap:20px;
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     .grid-filter-column {
       grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width:970px) {
+    .grid-filter-column {
+      gap:0px;
     }
   }
 `;

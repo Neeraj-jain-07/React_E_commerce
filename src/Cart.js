@@ -10,7 +10,7 @@ const Cart = () => {
   // console.log(cart)
 
   if(cart.length ===0) {
-    console.log("ok")
+    // console.log("ok")
   return <h3 style={{textAlign:"center" ,padding:"80px" ,minHeight:'70vh'}}>No item added ....</h3>
    }
 
@@ -21,7 +21,7 @@ const Cart = () => {
           <div className="1"><p className="t-c">ITEM</p></div>
           <div className="2"><p>PRICE</p></div>
           <div className="3"><p>QUANTITY</p></div>
-          <div className="4"><p>SUBTOTAL</p></div>
+          <div className="four"><p>SUBTOTAL</p></div>
           <div className="5"><p>REMOVE</p></div>
        </div>
        <hr />
@@ -298,6 +298,28 @@ const Wrapper = styled.section`
         gap: 1.8rem;
         padding: 3.2rem;
       }
+    }
+  }
+
+  @media (max-width:550px){
+    .img{
+      flex-direction: column;
+      .showColor{
+        flex-direction: row;
+      }
+      p{
+        text-align:start;
+      }
+    }
+
+    .sSubTotal{
+      display:none;
+    }
+    .four{
+      display:none;
+    }
+    .g-5-cols{
+      grid-template-columns: repeat(4,1fr);
     }
   }
 `;

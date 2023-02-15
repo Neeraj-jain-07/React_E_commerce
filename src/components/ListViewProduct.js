@@ -34,9 +34,22 @@ Button{
  
 p{
     color:grey;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 105px;
 }
 
+// p {
+//     color:grey;
+//     // width: 30%;
+//     white-space: nowrap;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+// }
+
 .img{
+    display: flex;
+align-items: center;
 }
 
 
@@ -68,6 +81,46 @@ figure{
     gap:10px;
     justify-content: end;
     padding-right: 20px;
+}
+
+@media (max-width:1080px){
+    .content{
+       padding-top:25px;
+    }
+    .product{
+        gap: 20px;
+    }
+    figure{
+        img{
+            padding: 40px 0px 0px 26px;
+        }
+    }
+}
+
+@media (max-width:940px){
+    .product{
+        grid-template-columns: 1.3fr 1fr;
+    }
+}
+
+@media (max-width:690px){
+
+    p{
+        max-height: 67px;
+    }
+}
+@media (max-width:540px){
+    h3{
+        font-size: 2rem;
+    }
+    p{
+        max-height: 50px;
+    }
+}
+@media (max-width:470px){
+    p{
+        max-height: 37px;
+    }
 }
 `
 
