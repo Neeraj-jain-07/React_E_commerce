@@ -6,12 +6,12 @@ import TrustedSection from './components/TrustedSection'
 
 const Home = () => {
   const data ={
-    title:"Thapa Store"
+    title:"Electrical Store"
   }
   return (
     <div>
       <HeroSection data={data}/>
-      <FeaturedProjucts/>
+      {/* <FeaturedProjucts/> */}
       <Services/>
       <TrustedSection/>
       

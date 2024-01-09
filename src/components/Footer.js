@@ -16,8 +16,8 @@ const Footer = () => {
             <div className="borderFotter">
                 <div className="fotter d-f">
                     <div className="firstSec d-f f-d-col section">
-                        <p>Thapa Technical</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ex! </p>
+                        <p>Electrical Store</p>
+                        <p>Latest Electrical item that inhance your life style</p>
                     </div>
                     <div className="secondSec d-f f-d-col section">
                         <p>Subscribe to get important updates</p>
@@ -40,7 +40,7 @@ const Footer = () => {
                 <hr />
                 <div className="fotterSecond d-f">
                     <div className="f-second-item-1">
-                        <p> @2023 ThapaTechnical . All Right is reserved</p>
+                        <p> @2024 Electrical Store . All Right is reserved</p>
                     </div>
                     <div className="f-second-item-2">
                         <p>Privacy Policy</p>

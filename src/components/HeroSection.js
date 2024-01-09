@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const HeroSection = (props) => {
+
   return (
     <Wrapper>
       <div className="grid mainSection">
@@ -9,10 +10,7 @@ const HeroSection = (props) => {
           <h3>Welcome to </h3>
           <h2>{props.data.title}</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad alias,
-            minima dolores, id veritatis fuga ducimus ea similique adipisci
-            tempora placeat tenetur architecto repudiandae error delectus! In
-            veniam expedita quo quas. Quas, maxime ab?
+          Discover Cutting-Edge Electronics at <b>Electrical Store</b> - Elevate Your Lifestyle with the Latest in Mobiles, Laptops, and Digital Watches. Explore Innovative Technology, Unmatched Quality, and Irresistible Deals. Experience Seamless Shopping and Exceptional Customer Service. 
           </p>
           <button>Shop Now</button>
         </div>
@@ -25,10 +23,12 @@ const HeroSection = (props) => {
 };
 
 const Wrapper = styled.div`
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
   .mainSection {
     max-width: 1200px;
     margin: auto;
     margin-top: 20px;
+    font-family: 'Open Sans', sans-serif;
   }
 
   .grid {

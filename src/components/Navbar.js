@@ -43,7 +43,7 @@ const Nav = styled.nav`
     width: 150px;
   }
   .logo img {
-    margin-top: 16px;
+    margin-top: 18px;
     width: 100%;
   }
 
@@ -118,7 +118,7 @@ const Navbar = () => {
     <Nav>
       <div className="header">
         <div className="logo">
-          <img src="/images/logo.png" alt="" />
+          <img src="/images/logo.jpeg" alt="" />
         </div>
         <div className={hamberger ? "navbar active" : "navbar"}>
           <Link to="/" className="alink" onClick={navbarRenderDown}>

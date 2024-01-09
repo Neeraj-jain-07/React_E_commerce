@@ -11,7 +11,11 @@ const Cart = () => {
 
   if(cart.length ===0) {
     // console.log("ok")
-  return <h3 style={{textAlign:"center" ,padding:"80px" ,minHeight:'70vh'}}>No item added ....</h3>
+  return <Wrapper2>
+   <h3 className="emptycart">
+    <img src="/images/emptyCart.png" alt="" />
+    </h3>
+    </Wrapper2>
    }
 
   return <Wrapper>
@@ -60,8 +64,19 @@ const Cart = () => {
     </Wrapper>;
 };
 
-const Wrapper = styled.section`
+const Wrapper2 = styled.section`
+.emptycart{
+  text-align: center;
+  padding: 50px;
+}
+@media (max-width:480px){
+  .emptycart img{
+   width:180px;
+  }
+}
+`
 
+const Wrapper = styled.section`
    .wrapPriceSummary{
       justify-content:end;
       margin:20px;

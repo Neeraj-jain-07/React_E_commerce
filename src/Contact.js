@@ -8,7 +8,7 @@ const Contact = () => {
     .heading{
        font-size:30px;
        font-weight:500;
-       padding: 45px 30px 30px;
+       padding: 30px 30px 0px;
     }
     
     .form{
@@ -16,7 +16,7 @@ const Contact = () => {
       flex-direction:column;
       gap:20px;
       width:500px;
-      margin:30px auto;
+      margin:15px auto;
     }
 
     button{
@@ -38,7 +38,7 @@ const Contact = () => {
   return (
     <Wrapper>
       <h3 className="heading">Contact us</h3>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1842360.6943601319!2d78.58898358714669!3d23.95231440068263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1675957677137!5m2!1sen!2sin" width="100%" height="400" style={{border:"0"}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="MainOffice"></iframe>
+     
 
     <div className="form">
         <form action="https://formspree.io/f/mjvdywdy" method="POST" className="form">
@@ -48,6 +48,7 @@ const Contact = () => {
         <button type="submit">Send</button>
         </form>
     </div>
+     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1842360.6943601319!2d78.58898358714669!3d23.95231440068263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1675957677137!5m2!1sen!2sin" width="100%" height="400" style={{border:"0"}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="MainOffice"></iframe>
     </Wrapper>);
 };
 
